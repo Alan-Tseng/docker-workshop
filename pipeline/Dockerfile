@@ -22,9 +22,9 @@ COPY "pyproject.toml" "uv.lock" ".python-version" ./
 RUN uv sync --locked
 
 # copy the script to the container. 1st name is source file, 2nd is destination
-COPY ingest_data.py .
+COPY ingest_zones.py .
 
 # define what to do first when the container runs
 # in this example, we will just run the script
 # ENTRYPOINT ["uv", "run", "pipeline.py"]  # This is also OK
-ENTRYPOINT ["python", "ingest_data.py"]
+ENTRYPOINT ["python", "ingest_zones.py"]
